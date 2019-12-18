@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "site": "sapproject",
+      "site": "sapproject",
     "public": "public",
     "ignore": [
       "firebase.json",
