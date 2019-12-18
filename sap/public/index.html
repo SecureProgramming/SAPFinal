@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <title>TheForum</title>
+  <title>GameGuidez</title>
 </head>
 <body class="grey lighten-3">
 
@@ -14,18 +14,16 @@
   <nav class="z-depth-0 grey lighten-4">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">
-        <img src="img/logo.png" style="width: 180px; margin-top: 10px;">
+        <img src="img/logo.svg" style="width: 180px; margin-top: 10px;">
       </a>
-        
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <span>
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
           </li>
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
-          <li class="admin" style="display: none;">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
           </li>
           <li class="logged-out" style="display: none;">
@@ -34,13 +32,13 @@
           <li class="logged-out" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
           </li>
-        </span>
+        
       </ul>
     </div>
   </nav>
 
   <!-- ADMIN ACTIONS -->
-  <form class="center-align admin-actions admin" style="margin: 40px auto; max-width: 300px; ">
+  <form class="center-align admin-actions" style="margin: 40px auto; max-width: 300px;">
     <input type="email" placeholder="User email" id="admin-email" required />
     <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
   </form>
@@ -58,9 +56,11 @@
           <input type="password" id="signup-password" required />
           <label for="signup-password">Choose password</label>
         </div>
-
+        <div class="input-field">
+          <input type="text" id="signup-bio" required />
+          <label for="signup-bio">One Line Bio</label>
+        </div>
         <button class="btn yellow darken-2 z-depth-0">Sign up</button>
-        <p class="error pink-text center-align"></p>
       </form>
     </div>
   </div>
@@ -79,7 +79,6 @@
           <label for="login-password">Your password</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">Login</button>
-        <p class="error pink-text center-align"></p>
       </form>
     </div>
   </div>
@@ -116,13 +115,14 @@
 
     </ul>
   </div>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js "></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js "></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js "></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-functions.js "></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
   <script>
     // Initialize Firebase
-        var config = {
+    var config = {
     apiKey: "AIzaSyCT4CYhsNG927FwSSCwJTtmVI0fzINNL8s",
     authDomain: "sapproject-38d6e.firebaseapp.com",
     databaseURL: "https://sapproject-38d6e.firebaseio.com",
@@ -131,8 +131,8 @@
     messagingSenderId: "1091133910203",
     appId: "1:1091133910203:web:2344b380f699ca490c0d9e",
     measurementId: "G-QJ493BTD5B"
-        };
-        firebase.initializeApp(config);
+    };
+    firebase.initializeApp(config);
     
     // make auth and firestore references
     const auth = firebase.auth();
@@ -140,6 +140,7 @@
     const functions = firebase.functions();
 
     // update firestore settings
+    db.settings({ timestampsInSnapshots: true });
   </script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
