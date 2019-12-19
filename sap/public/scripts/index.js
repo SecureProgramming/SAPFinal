@@ -42,6 +42,7 @@ const setupGuides = (data) => {
         <li>
           <div class="collapsible-header grey lighten-4"> ${guide.title} </div>
           <div class="collapsible-body white"> ${guide.content} </div>
+        <div class="collapsible-body white"> ${guide.author} </div>
         </li>
       `;
       html += li;
