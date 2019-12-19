@@ -7,7 +7,6 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>TheForum</title>
 </head>
 <body class="grey lighten-3">
@@ -27,7 +26,7 @@
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
-          <li class="s" style="display: none;">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
           </li>
           <li class="logged-out" style="display: none;">
@@ -50,10 +49,7 @@
 <main>
     
   <!-- ADMIN ACTIONS -->
-  <form class="center-align admin-actions admin" style="margin: 40px auto; max-width: 300px; ">
-    <input type="email" placeholder="User email" id="admin-email" required />
-    <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
-  </form>
+
 
   <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
